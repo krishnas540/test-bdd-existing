@@ -1,0 +1,6 @@
+ByXpath:
+  amazonDeptSelection:
+    xpath: //rpc-reply/interface-information/*
+ByXpath:
+  amazonEnter:
+    xpath: //rpc-reply/interface-information/*
