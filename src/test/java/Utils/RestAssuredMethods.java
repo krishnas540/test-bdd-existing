@@ -11,6 +11,7 @@ import com.jayway.restassured.specification.RequestSpecification;
 import javafx.util.Builder;
 import org.apache.http.client.methods.RequestBuilder;
 
+import java.util.HashMap;
 import java.util.Map;
 
 import static com.jayway.restassured.RestAssured.given;
@@ -26,7 +27,6 @@ public class RestAssuredMethods {
     }
 
     public ValidatableResponse getCall(String host, String endpoint) throws  Throwable{
-
         requestSpecBuilder = new RequestSpecBuilder();
         requestSpecBuilder.setBaseUri(host);
         requestSpecBuilder.setBasePath(endpoint);
@@ -44,6 +44,10 @@ public class RestAssuredMethods {
         RequestSpecification requestSpecification = requestSpecBuilder.build();
         response = given().spec(requestSpecification).post().then().log().status();
         return  response;
+        /*if some service uses heardes we need to define as Hashmap
+                HashMap headers = new HashMap();
+        headers.put("Autherization", "abcd");
+        response = given().spec(requestSpecification).header(headers).post().then().log().status();*/
     }
 
     public ValidatableResponse putCall(String host, String endpoint, String payLoad) throws  Throwable{

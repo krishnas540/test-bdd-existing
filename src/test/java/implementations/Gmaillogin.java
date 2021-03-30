@@ -13,10 +13,6 @@ public class Gmaillogin {
         System.setProperty("webdriver.chrome.driver", "C:\\Users\\user\\Downloads\\chromedriver.exe");
         driver=new ChromeDriver();
         // Instantiate a ChromeDriver class.
-
-
-
-
     }
 
     public  void launchGmailapp(){
@@ -39,8 +35,6 @@ public class Gmaillogin {
         // click on next button
         driver.findElement(By.id("identifierNext")).click();
         driver.findElement(By.name("adbs")).click();
-
-
 
 
     }
